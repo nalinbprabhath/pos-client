@@ -1,0 +1,17 @@
+.btn{
+    width: 200px;
+    height:50px;
+}
+
+.btn-default-items{
+    width: 150;
+    height: 100;
+}
+
+.divider{
+    width:30px;
+    height:auto;
+    display:inline-block;
+}
+
+#addProduct {background: #BDBDBD;}

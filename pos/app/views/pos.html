@@ -1,0 +1,65 @@
+﻿<section>
+    
+    
+    
+    <div class="container">
+        <h1></h1>
+        <div class="row">   
+            <div class="col-md-4 top-left">
+                <table class="table">
+                    <thead>
+                        <tr class="tr label-info">
+                            <th>Table Order</th>
+                            <th></th>
+                            <th></th>
+                            <th data-bind="text: todayDate "></th>
+                        </tr>
+                        <tr>
+                            <th>Qty</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr class="tr label-default">
+                            <td>Total</td>
+                            <td></td>
+                            <td></td>
+                            <td data-bind="value: order.total, text:order.total"/>
+                        </tr>
+                    </tfoot>
+                    <!--<div data-bind="if: order"></div>-->
+                    <tbody data-bind="foreach: order.orderLines">
+                        <tr>
+                            <td data-bind="text: $data.quantity"></td>
+                            <td data-bind="text: $data.item.name"></td>
+                            <td data-bind="text: $data.item.price"></td>
+                            <td data-bind="text: $data.amount"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row col-md-3 top" data-bind="foreach: categories">
+<!--                <div >-->
+                <div>
+                    <button class="btn btn-default" data-bind="value: name, text:name, click: function(){$parent.setCategory($data.name);}, attr: {style: 'background-color: ' + color}"></button>
+                </div>
+                <!--</div>-->
+            </div>
+            <div class="row col-md-5 top-right">
+                <!--<div data-bind="if: category">-->
+                <div data-bind="foreach: category.products" >
+                    <!--<p data-bind="text: $data.name"></p>-->
+                        <button class="btn btn-default" data-bind="value: $data, text:name, click: function(){$parent.addOrderLine($data);}, attr: {style: 'background-color: ' + $parent.category.color}"></button>
+                </div>
+            </div>
+        </div>
+<!--        <div class="row">
+            <h1><span class="label label-default col-md-4" data-bind="value: order.total, text:order.total"/></h1>
+            <label type="text" class="label col-md-4" data-bind="value: order.total, text:order.total" />
+        </div>-->
+        </div>
+    <!--</div>-->
+        
+</section>

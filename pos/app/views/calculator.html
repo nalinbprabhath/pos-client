@@ -1,0 +1,48 @@
+
+<section>
+    
+    <h2>Calculator <span data-bind="text: nicething.name"></span></h2>
+    <input type="text" data-bind="value: nicething.name, valueUpdate: 'keyup'">
+    
+    <br>
+    <div data-bind="foreach: items">
+        <span data-bind="text: name"></span><br>
+    </div>
+    
+    <input type="text" data-bind="value: newItemName"> <button data-bind="click: addNewItem">Add new</button>
+    
+    <br/>
+    <br/>
+    <div class="container center-block">
+        <div class="row">
+            <input  class=" input-lg bg-success text-right col-md-4" data-bind="value: textResult" type="text" readonly/>
+        </div>
+        <br/>
+        
+        <div class="row" data-bind="foreach:row1 ">
+                <button class="btn btn-default btn-lg col-lg-1" data-bind="click: function(){$root.one($data.value)},text: $data.value"/>
+        </div>
+        <br/>
+        
+        <div class="row" data-bind="foreach:row2 ">
+                <button class="btn btn-default btn-lg col-lg-1" data-bind="click: function(){$root.one($data.value)},text: $data.value"/>
+        </div>
+        <br/>
+        
+        <div class="row" data-bind="foreach:row3 " >
+                <button class="btn btn-default btn-lg col-lg-1" data-bind="click: function(){$root.one($data.value)},text: $data.value"/>
+        </div>
+        <br/>
+        
+        <div class="row" data-bind="foreach:row4 ">
+                <button class="btn btn-default btn-lg col-lg-1" data-bind="click: function(){$root.one($data.value)},text: $data.value"/>
+        </div>
+        <br/>
+        
+        <div class="row">
+            <button class="btn btn-info btn-lg col-md-4" value="=" data-bind="click: function(){$root.one('=')}">=</button>
+        </div>
+        
+    </div>  
+    
+</section>
